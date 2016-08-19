@@ -9,6 +9,5 @@ describe("Note Model", function() {
     var note = new Note("This is a test note");
     expect.toEqual(note.content() === "This is a test note");
 
-
   });
 });

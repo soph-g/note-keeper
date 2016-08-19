@@ -1,10 +1,13 @@
-var Note = function(content) {
+var Note = function(contents) {
+
+  var noteContent = contents;
 
   return {
 
     content: function() {
-      return content;
+      return noteContent;
     }
+    
   };
 
 };
