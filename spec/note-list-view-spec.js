@@ -10,7 +10,7 @@ describe("Note list view", function() {
   notes.addNote("This is a 3rd note longer than 20 character");
   noteListView = new NoteListView(notes);
   emptyListView = new NoteListView(new NoteList());
-  expectedOutput = "<ul><div id='note'><li><a href='#0'>This is a note</a></li></div><div id='note'><li><a href='#1'>This is a 2nd note</a></li></div><div id='note'><li><a href='#2'>This is a 3rd note l...</a></li></div></ul>";
+  expectedOutput = "<ul><div><li><a id='note' href='#0'>This is a note</a></li></div><div><li><a id='note' href='#1'>This is a 2nd note</a></li></div><div><li><a id='note' href='#2'>This is a 3rd note l...</a></li></div></ul>";
 
 
 

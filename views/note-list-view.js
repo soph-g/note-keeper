@@ -11,7 +11,7 @@ var NoteListView = function(notes) {
       var arrayOfNotes = this.list().all();
       for(i = 0; i < arrayOfNotes.length; i++) {
         noteText = arrayOfNotes[i].content().substring(0,20);
-        openingHTML = "<div id='note'><li><a href='#" + i + "'>";
+        openingHTML = "<div><li><a id='note' href='#" + i + "'>";
         if ((arrayOfNotes[i]).content().length > 20) {
           html += openingHTML + noteText + "...</a></li></div>";
         } else {

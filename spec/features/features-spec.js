@@ -5,7 +5,7 @@ var it = expect.it;
 describe('Notes front page', function() {
   it('contains a list of notes', function() {
     setTimeout(function() {
-      expect.toEqual(document.getElementById("app").innerHTML === '<ul><div id="note"><li><a href="#0">This is a note for v...</a></li></div></ul>');
+      expect.toEqual(document.getElementById("app").innerHTML === '<ul><div><li><a id="note" href="#0">This is a note for v...</a></li></div></ul>');
     }, 1000);
   });
 

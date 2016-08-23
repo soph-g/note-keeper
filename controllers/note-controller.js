@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var noteList = new NoteList();
     noteList.addNote("This is a note for views testing");
-    noteList.addNote("Another note for testing linking between notes");
-    noteList.addNote("Yet another note");
+    // noteList.addNote("Another note for testing linking between notes");
+    // noteList.addNote("Yet another note");
     var noteView = new NoteListView(noteList);
     htmlCode = noteView.render();
 
@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
       })();
     });
 
-    window.addEventListener("hashchange", showSelectedNote());
+    window.addEventListener("hashchange", function() {
+      showSelectedNote();
+    });
 
     function showSelectedNote() {
-      showNote(getNoteID(window.location));
+       showNote(getNoteID(window.location));
     }
 
     function getNoteID(location) {
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(note);
       document.getElementById("app").innerHTML = SingleNoteView(note).render();
     }
-
 
   })();
 
