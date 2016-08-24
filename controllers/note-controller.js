@@ -1,6 +1,4 @@
 var noteList = new NoteList();
-// noteList.addNote("Another note for testing linking between notes");
-// noteList.addNote("Yet another note");
 var noteView = new NoteListView(noteList);
 
 
