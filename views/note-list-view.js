@@ -7,7 +7,7 @@ var NoteListView = function(notes) {
     },
 
     render: function() {
-      var html = "<ul>";
+      var html = "<h2>Notes List</h2><ul>";
       var arrayOfNotes = this.list().all();
       for(i = 0; i < arrayOfNotes.length; i++) {
         noteText = arrayOfNotes[i].content().substring(0,20);

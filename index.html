@@ -4,20 +4,23 @@
     <meta charset="utf-8">
     <title>title</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <script src="../models/note-list-model.js"></script>
-    <script src="../models/note-model.js"></script>
-    <script src="./note-list-view.js"></script>
-    <script src="./single-note-view.js"></script>
-    <script src="../controllers/note-controller.js"></script>
+    <script src="./models/note-list-model.js"></script>
+    <script src="./models/note-model.js"></script>
+    <script src="./views/note-list-view.js"></script>
+    <script src="./views/single-note-view.js"></script>
   </head>
   <body>
     <jotter id="add-note">
       <input type="text" id="noteContent" name="note-content">
       <button type="button" id="save-note-button" name="button">Save</button>
     </jotter>
+  
+    <div id="note-view">
+
+    </div>
 
     <div id="app">
     </div>
-    <script src="../controllers/note-controller.js"></script>
+    <script src="./controllers/note-controller.js"></script>
   </body>
 </html>
