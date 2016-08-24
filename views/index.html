@@ -11,11 +11,13 @@
     <script src="../controllers/note-controller.js"></script>
   </head>
   <body>
+    <jotter id="add-note">
+      <input type="text" id="noteContent" name="note-content">
+      <button type="button" id="save-note-button" name="button">Save</button>
+    </jotter>
+
     <div id="app">
-      <jotter>
-        <input type="text" id="noteContent" name="note-content">
-        <button type="button" id="save-note-button" name="button">Save</button>
-      </jotter>
     </div>
+    <script src="../controllers/note-controller.js"></script>
   </body>
 </html>

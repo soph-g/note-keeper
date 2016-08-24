@@ -7,7 +7,7 @@ var SingleNoteView = function(note) {
     },
 
     render: function() {
-      return "<div>" + note.content() + "</div>";
+      return "<div>" + note.content() + "</div><div><form><button type='button' id='back' name='button'>Back</button></form></div>";
     }
 
   };
