@@ -1,5 +1,6 @@
 var noteList = new NoteList();
 var noteView = new NoteListView(noteList);
+var storage = new Storage();
 
 
 window.addEventListener("load", function() {
@@ -7,10 +8,11 @@ window.addEventListener("load", function() {
 });
 
 document.getElementById('save-note-button').addEventListener("click", function() {
-  note = document.getElementById("noteContent").value;
-  noteList.addNote(note);
+  text = document.getElementById("noteContent").value;
+  note = new Note(text);
+  storage.saveNote(note);
   document.getElementById("noteContent").value = " ";
-  loadNoteView();
+  storage.getNotes();
 });
 
 window.addEventListener("hashchange", function() {
@@ -18,7 +20,7 @@ window.addEventListener("hashchange", function() {
 });
 
 function loadNoteView() {
-  document.getElementById("app").innerHTML = noteView.render();
+  storage.getNotes();
 }
 
 
@@ -27,12 +29,11 @@ function showSelectedNote() {
 }
 
 function getNoteID(location) {
-  console.log(location.hash.split('#')[1]);
   return location.hash.split("#")[1];
 }
 
 function showNote(noteID) {
-  note = noteList.all()[noteID];
+  note = storage.noteslist()[noteID];
   console.log(note);
   document.getElementById("note-view").innerHTML = SingleNoteView(note).render();
 }

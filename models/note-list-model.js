@@ -4,11 +4,11 @@ var NoteList = function() {
   return {
 
     all: function() {
-      notes = [];
-      for(i = 0; i<= localStorage.length; i++) {
-        text = localStorage.getItem(i);
-        notes.push(text);
-      }
+      notes = storage.getNotes();
+      // for(i = 0; i<= localStorage.length; i++) {
+      //   text = localStorage.getItem(i);
+      //   notes.push(text);
+      // }
       return notes;
     },
 
