@@ -10,10 +10,13 @@ window.addEventListener("load", function() {
 document.getElementById('save-note-button').addEventListener("click", function() {
   text = document.getElementById("noteContent").value;
   note = new Note(text);
-  storage.saveNote(note);
+  storage.saveNote(note, function() {
+    setTimeout(function() {
+      storage.getNotes();}, 100);
+  });
   document.getElementById("noteContent").value = " ";
-  storage.getNotes();
 });
+
 
 window.addEventListener("hashchange", function() {
   showSelectedNote();
@@ -34,6 +37,5 @@ function getNoteID(location) {
 
 function showNote(noteID) {
   note = storage.noteslist()[noteID];
-  console.log(note);
   document.getElementById("note-view").innerHTML = SingleNoteView(note).render();
 }

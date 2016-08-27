@@ -8,7 +8,7 @@ var Storage = function() {
             callback(httpRequest.responseText);
         }
       };
-      httpRequest.open("GET", url);
+      httpRequest.open("GET", url, true);
       httpRequest.send(null);
     };
   };
@@ -23,15 +23,15 @@ var Storage = function() {
       return dataset;
     },
 
-    saveNote: function(note) {
+    saveNote: function(note, callback) {
       var httprequest = new XMLHttpRequest();
       var jsonNote = (note.content());
       httprequest.open("POST", "http://localhost:4567/notes?content=" + jsonNote);
       httprequest.send(jsonNote);
+      callback();
     },
 
     getNotes: function() {
-      var http = new HttpClient();
       var httprequest = new XMLHttpRequest();
       http.get('http://localhost:4567/notes', function(response) {
         dataset = [];
